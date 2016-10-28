@@ -12,6 +12,7 @@ namespace WebApplication2.Controllers
         public ActionResult yuIndex()
         {
             return View();
+           
         }
     }
 }
