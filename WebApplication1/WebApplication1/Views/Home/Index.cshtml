@@ -3,10 +3,11 @@
 @model List<HomeController.AlbumWithCount>
 @{
     var id = ViewBag.ID;
+    Layout = "";
 }
 
 
-
+    
 
 <!DOCTYPE html>
 
@@ -15,7 +16,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
     <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
-
+    
 
 
 
@@ -30,13 +31,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand">Brand</a>
+                <!-- <a href="#" class="navbar-brand">Brand</a> -->
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
+                    <li><a href="http://localhost:49980/Home/a1103105329">組長:1103105329</a></li>
+                    <li><a href="http://localhost:49980/Home/a1103105321">組員:1103105321</a></li>
+                    <li><a href="http://localhost:49980/Home/a1103105313">組員:1103105313</a></li>
+                    <li><a href="http://localhost:49980/Home/a1103105312">組員:1103105312</a></li>
                 </ul>
             </div>
         </div>
@@ -44,45 +47,95 @@
 
     <div class="container">
         <div>
-            <h1>My Album</h1>
+            <h1>組員名單:</h1>
         </div>
 
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <table class="table table-bordered">
+                <!--  <table class="table table-bordered">  -->
+                <table border=1 class="table table-bordered">
                     <thead></thead>
                     <tbody>
-                        <tr>
-                            <td>Genre </td>
-                            <td>Title </td>
-                            <td>Price </td>
-                            <td>ReadCount</td>
-                        </tr>
-                        @for (var i = 0; i < Model.Count; i++)
-                        {
-                            <tr>
-                                <td>@Model[i].Data.Genre</td>
-                                <td>@Model[i].Data.Title</td>
-                                <td>@Model[i].Data.Price</td>
-                                <td>@Model[i].ReadCount</td>
+
+                        
+                            @for (var i = 0; i < Model.Count; i++)
+                            {
+
+                           <tr>
+                                <td rowspan=3 align=center><img class="img-responsive" src="@Model[i].Data.image"></td>
+                                <td>@Model[i].Data.name</td>
                             </tr>
-                        }
+                            <tr>
+                                <td>@Model[i].Data.number</td>
+                            </tr>
+                            <tr>
+                                <td ><a href="http://localhost:49980/Home/a@(Model[i].Data.number)">@Model[i].Data.link</a></td>
 
+                            </tr>
 
+                            }
 
-                    </tbody>
-                    <tfoot></tfoot>
+                            <!--
+                            <tr>
+                                <td rowspan=3 align=center><img width="200" height="200" src="https://media2.popsugar-assets.com/files/2016/02/08/898/n/1922398/4c2124bfd07afeca_heart-shaped-pizza-2016.xxxlarge_2x.jpg"></td>
+                                <td>Name:</td>
+                            <tr>
+                                <td>number:</td>
+                            <tr>
+                                <td>儲存格 B3</td>
+                                &LT/table>
+                            </tr>
 
-                </table>
+                            <tr>
+                                <td rowspan=3 align=center><img width="200" height="200" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ3Bdu409rOMbmEKqHneDWkj-UuKVkM82SFAkDYG6zHNjwpqe-C"></td>
+                                <td>Name:</td>
+                            <tr>
+                                <td>number:</td>
+                            <tr>
+                                <td>儲存格 B3</td>
+                                &LT/table>
+                            </tr>
+                            <tr>
+                                <td rowspan=3 align=center><img width="200" height="200" src="http://images.vectorhq.com/images/previews/cc6/domo-kun-psd-454972.png"></td>
+                                <td>Name:</td>
+                            <tr>
+                                <td>number:</td>
+                            <tr>
+                                <td>儲存格 B3</td>
+                                &LT/table>
+                            </tr>
+                            <tr>
+                                <td rowspan=3 align=center><img width="200" height="200" src="http://www.geeky-gadgets.com/wp-content/uploads/2010/06/android-robot1.jpg"></td>
+                                <td>Name:</td>
+                            <tr>
+                                <td>number:</td>
+                            <tr>
+                                <td>儲存格 B3</td>
+                                &LT/table>
+                            </tr>
+                            -->
+                            <!--
+                            <tr>
+                                <td>Genre </td>
+                                <td>Title </td>
+                                <td>Price </td>
+                                <td>ReadCount</td>
+                            </tr>
+
+                            /-->
+                        </tbody>
+                        <tfoot></tfoot>
+
+                    </table>
+
+                </div>
+
 
             </div>
-
-
         </div>
-    </div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 
-</body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+    </body>
 </html>

@@ -34,5 +34,23 @@ namespace WebApplication1.Controllers
             return View(result);
             //return Content("<h1>hello world</h1>" + id);
         }
+
+        public ActionResult a1103105329()
+        {
+            return View();
+        }
+
+        public ActionResult a1103105321()
+        {
+            return View();
+        }
+        public ActionResult a1103105313()
+        {
+            return View();
+        }
+        public ActionResult a1103105312()
+        {
+            return View();
+        }
     }
 }

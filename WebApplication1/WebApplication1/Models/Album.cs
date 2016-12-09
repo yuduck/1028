@@ -7,8 +7,10 @@ namespace WebApplication1.Models
 {
     public class Album
     {
-        public string Genre { get; set; }
-        public string Title { get; set; }
-        public int Price { get; set; }
+        public string image { get; set; }
+        public string name { get; set; }
+        public int number { get; set; }
+        public string link { get; set; }
+
     }
 }
